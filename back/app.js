@@ -24,7 +24,7 @@ mongoose.connect('mongodb://kevlin:kevlin123@ds155045.mlab.com:55045/myprojet', 
 });
 
 app.get('/', (req, res) => {
-	res.send('Evaluation Nodejs');
+	res.send('Evaluation Nodejs!');
 });
 
 app.post('/api/v1/projet', projetController.createProjet);
