@@ -19,7 +19,7 @@ mongoose.connect('mongodb://kevlin:kevlin123@ds155045.mlab.com:55045/myprojet', 
 		console.log('database not connected...');
 	}
 	else{
-		console.log('database connected');
+		console.log('database connected!');
 	}
 });
 
