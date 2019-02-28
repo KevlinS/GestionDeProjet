@@ -14,6 +14,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.json());
 app.use(cors());
 
+// Connexion la base de données
 mongoose.connect('mongodb://kevlin:kevlin123@ds155045.mlab.com:55045/myprojet', (err) => {
 	if(err) {
 		console.log('database not connected...');
@@ -27,13 +28,14 @@ app.get('/', (req, res) => {
 	res.send('Evaluation Nodejs!');
 });
 
+// HTTP des projets
 app.post('/api/v1/projet', projetController.createProjet);
 app.get('/api/v1/projet', projetController.getProjet);
 app.put('/api/v1/projet/:id', projetController.updateProjet);
 app.delete('/api/v1/projet/:id', projetController.deleteProjet);
 app.get('/api/v1/product/:id', projetController.detailProjet);
 
-
+// Se connecter sur la port 3000
 const port = 3000;
 
 app.listen(port, () => {

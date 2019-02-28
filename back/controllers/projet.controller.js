@@ -23,7 +23,6 @@ exports.createProjet = function(req, res) {
 	});
 }
 
-
 exports.getProjet = function(req, res) {
 	Projet.find(function(err, projet){
 		if(err){
