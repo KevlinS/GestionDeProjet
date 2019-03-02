@@ -6,7 +6,7 @@ const fs = require('fs');
 let SalarieSchema = new Schema ({
 	nomSalarie: String,
 	prenomSalarie: String,
-	usernameSalrie: String,
+	usernameSalarie: String,
     dateDeNaissance: Date,
     adresseSalarie: String,
     telephoneSalarie: String,
