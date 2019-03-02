@@ -52,7 +52,7 @@ mongoose.connect('mongodb://kevlin:kevlin123@ds239055.mlab.com:39055/myclient', 
 
 
 app.get('/', (req, res) => {
-	res.send('Evaluation Nodejs!');
+	res.send('Evaluation Nodejs!!');
 });
 
 // HTTP des projets
