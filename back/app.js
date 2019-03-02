@@ -31,7 +31,7 @@ mongoose.connect('mongodb://kevlin:kevlin123@ds357955.mlab.com:57955/gestiondepr
 
 
 app.get('/', (req, res) => {
-	res.send('Evaluation Nodejs!!');
+	res.send('Evaluation Nodejs!');
 });
 
 // HTTP des projets
