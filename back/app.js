@@ -18,37 +18,16 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.json());
 app.use(cors());
 
-// Connexion la base de données des projets
-mongoose.connect('mongodb://kevlin:kevlin123@ds155045.mlab.com:55045/myprojet', (err) => {
+// Connexion la base de données
+mongoose.connect('mongodb://kevlin:kevlin123@ds357955.mlab.com:57955/gestiondeprojet', (err) => {
 	if(err) {
-		console.log('database projets not connected...');
+		console.log('database not connected...');
 	}
 	else{
-		console.log('database projets connected!');
+		console.log('database connected!');
 	}
 });
 
-
-// // Connexion la base de données des salariés
-// mongoose.connect('mongodb://kevlin:kevlin123@ds155845.mlab.com:55845/mysalarie', (err) => {
-// 	if(err) {
-// 		console.log('database salariés not connected...');
-// 	}
-// 	else{
-// 		console.log('database salariés connected!');
-// 	}
-// });
-
-
-// // Connexion la base de données des clients
-// mongoose.connect('mongodb://kevlin:kevlin123@ds239055.mlab.com:39055/myclient', (err) => {
-// 	if(err) {
-// 		console.log('database clients not connected...');
-// 	}
-// 	else{
-// 		console.log('database clients connected!');
-// 	}
-// });
 
 
 app.get('/', (req, res) => {
