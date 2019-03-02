@@ -24,7 +24,7 @@
 
 <script>
 
-import ProductsService from '../services/ProductsService.vue'
+import ProjetsService from '../services/ProjetsService.vue'
 
 export default {
   data () {
@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     formData: function (name, description, price, tva) {
-      ProductsService.createProduct(name, description, price, tva)
+      ProjetsService.createProduct(name, description, price, tva)
     }
   }
 }

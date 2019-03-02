@@ -1,17 +1,17 @@
 <template lang="html">
     <div class="product-listing container">
-        <Title title="Listing produit"/>
-        <ProductsListComponent/>
+        <Title title="Listing projets"/>
+        <ProjetsListComponent/>
     </div>
 </template>
 
 <script>
-import ProductsListComponent from '@/components/ProductsListComponent.vue'
+import ProjetsListComponent from '@/components/ProjetsListComponent.vue'
 import Title from '@/utils/Title.vue'
 export default {
 
   components: {
-    ProductsListComponent,
+    ProjetsListComponent,
     Title
   }
 }

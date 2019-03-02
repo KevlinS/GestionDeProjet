@@ -16,7 +16,7 @@
                     <router-link to="/about">About</router-link>
                 </li>
                 <li class="nav-item px-2">
-                    <router-link to="/products-listing">Liste des produits</router-link>
+                    <router-link to="/projets-listing">Liste des projets</router-link>
                 </li>
                 <li class="nav-item px-2">
                     <router-link to="/create">Créer un produit</router-link>

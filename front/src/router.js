@@ -4,7 +4,7 @@ import Home from './views/Home.vue'
 import CreateProduct from './views/CreateProduct.vue'
 import ProductDetail from './views/ProductDetail.vue'
 import About from './views/About.vue'
-import ProductsListing from './views/ProductsListing.vue'
+import ProjetsListing from './views/ProjetsListing.vue'
 
 Vue.use(Router)
 
@@ -28,9 +28,9 @@ export default new Router({
       component: CreateProduct
     },
     {
-      path: '/products-listing',
-      name: 'ProductsListing',
-      component: ProductsListing
+      path: '/projets-listing',
+      name: 'ProjetsListing',
+      component: ProjetsListing
     },
     {
       path: '/product-detail/:id',

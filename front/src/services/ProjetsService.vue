@@ -1,14 +1,14 @@
 <script>
-const myApiUrl = 'http://localhost:3000/users/'
+const myApiUrl = 'http://localhost:3000/api/v1/projet'
 
 export default {
-  getProducts () {
+  getProjets () {
     return fetch(myApiUrl)
       .then((response) => {
         return response.json()
       })
   },
-  createProduct (name, description, price, tva) {
+  createProjet (nomProjet, descriptionProjet, dateDebut, dateFin, montantTotalProjet, statut) {
     return fetch(myApiUrl, {
       method: 'post',
       headers: {
@@ -17,10 +17,12 @@ export default {
       },
       body: JSON.stringify(
         {
-          'name': name,
-          'descripton': description,
-          'prix': price,
-          'tva': tva
+          'nomProjet': nomProjet,
+          'descriptionProjet': descriptionProjet,
+          'dateDebut': dateDebut,
+          'dateFin': dateFin,
+          'montantTotalProjet': montantTotalProjet,
+          'statut': statut
         }
       )
     })
@@ -29,10 +31,10 @@ export default {
         return response.json()
       })
   },
-  deleteProduct (id) {
+  deleteProjet (id) {
 
   },
-  editProduct (id, name, description, price, tva) {
+  editProjet (id, nomProjet, descriptionProjet, dateDebut, dateFin, montantTotalProjet, statut) {
     return fetch(myApiUrl + id, {
       method: 'put',
       headers: {
@@ -41,10 +43,12 @@ export default {
       },
       body: JSON.stringify(
         {
-          'name': name,
-          'descripton': description,
-          'prix': price,
-          'tva': tva
+          'nomProjet': nomProjet,
+          'descriptionProjet': descriptionProjet,
+          'dateDebut': dateDebut,
+          'dateFin': dateFin,
+          'montantTotalProjet': montantTotalProjet,
+          'statut': statut
         }
       )
     })
@@ -53,7 +57,7 @@ export default {
         return response.json()
       })
   },
-  getProduct (id) {
+  getProjet (id) {
     console.log(myApiUrl + id)
     return fetch(myApiUrl + id)
       .then((response) => {
