@@ -1,12 +1,18 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import CreateProduct from './views/CreateProduct.vue'
+import CreateProjet from './views/CreateProjet.vue'
 import ProjetDetail from './views/ProjetDetail.vue'
 import About from './views/About.vue'
 import ProjetsListing from './views/ProjetsListing.vue'
 import ProjetModifier from './views/ProjetModifier.vue'
 import ProjetSupprimer from './views/ProjetSupprimer.vue'
+import ClientsListing from './views/ClientsListing.vue'
+import ClientDetail from './views/ClientDetail.vue'
+import ClientModifier from './views/ClientModifier.vue'
+import ClientSupprimer from './views/ClientSupprimer.vue'
+import CreateClient from './views/CreateClient.vue'
+
 
 Vue.use(Router)
 
@@ -25,9 +31,9 @@ export default new Router({
       component:About
     },
     {
-      path: '/create',
-      name: 'CreateProduct',
-      component: CreateProduct
+      path: '/create-projet',
+      name: 'CreateProjet',
+      component: CreateProjet
     },
     {
       path: '/projets-listing',
@@ -48,6 +54,31 @@ export default new Router({
       path: '/projet-supprimer/:id',
       name: 'ProjetSupprimer',
       component: ProjetSupprimer
-    }
+    },
+    {
+      path: '/clients-listing',
+      name: 'ClienttsListing',
+      component: ClientsListing
+    },
+    {
+      path: '/client-detail/:id',
+      name: 'ClienttDetail',
+      component: ClientDetail
+    },
+    {
+      path: '/client-modifier/:id',
+      name: 'ClienttModifier',
+      component: ClientModifier
+    },
+    {
+      path: '/client-supprimer/:id',
+      name: 'ClientSupprimer',
+      component: ClientSupprimer
+    },
+    {
+      path: '/create-client',
+      name: 'CreateClient',
+      component: CreateClient
+    },
   ]
 })

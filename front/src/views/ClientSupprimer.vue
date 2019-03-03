@@ -1,27 +1,27 @@
 <template lang="html">
-    <div class="projet-supprimer">
-        <h1 align="center">Nom du projet : '{{projet.nomProjet}}' à été supprimer</h1>
+    <div class="client-supprimer">
+        <h1 align="center">Nom de l'entreprise : '{{client.nomEntreprise}}' à été supprimer</h1>
     </div>
 </template>
 
 <script>
-import ProjetsService from '../services/ProjetsService.vue'
+import ClientsService from '../services/ClientsService.vue'
 
 export default {
 
   data () {
     return {
-      projet: []
+      client: []
     }
   },
 
   created () {
     let paramsId = this.$route.params.id
     console.log(paramsId)
-    ProjetsService.deleteProjet(paramsId)
+    ClientsService.deleteClient(paramsId)
       .then((data) => {
-        this.projet = data
-        console.log(this.projet)
+        this.client = data
+        console.log(this.client)
       })
       .catch(error => {
         console.log(error)

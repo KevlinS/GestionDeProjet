@@ -1,5 +1,5 @@
 <template lang="html">
-    <div class="product-listing container">
+    <div class="projet-listing container">
         <Title title="Listing projets"/>
         <ProjetsListComponent/>
     </div>

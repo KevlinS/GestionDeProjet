@@ -33,7 +33,13 @@ export default {
       })
   },
   deleteClient (id) {
-
+    return fetch(myApiUrl + id, {
+    method: 'delete',
+    })
+      .then((response) => {
+        console.log(response)
+        return response.json()
+      })
   },
   editClient (id, nomEntreprise, nomClient, prenomClient, adresseClient, telephoneClient, mailClient, secteurActivite) {
     return fetch(myApiUrl + id, {

@@ -18,7 +18,7 @@
                
             </tr>
         </table>
-        <router-link to="/create" tag="button"  class="btn btn-primary">Créer un projet</router-link>
+        <router-link to="/create-projet" tag="button"  class="btn btn-primary">Créer un projet</router-link>
     </div>
 </template>
 

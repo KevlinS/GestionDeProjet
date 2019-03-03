@@ -32,7 +32,13 @@
 
           <div :class="{'form-group': true, 'has-error': errors.has('statut') }">
               <label>Statut</label>
-              <input type="text" v-validate="'required'" :class="{'input form-control': true }" v-model="statut" name="statut"/>
+              <select v-model="statut" v-validate="'required'" :class="{'input form-control': true }" name="statut">
+                  <option disabled value="">Choisissez</option>
+                  <option>annulé</option>
+                  <option>terminé</option>
+                  <option>en cours de réalisation</option>
+                  <option>prospect</option>
+              </select>
               <p class="text-danger" v-if="errors.has('statut')">{{ errors.first('statut') }}</p>
               </div>
         
@@ -77,7 +83,7 @@ export default {
       });
     },
     formData: function (nomProjet, descriptionProjet, dateDebut, dateFin, montantTotalProjet, statut) {
-      ProjetsService.editProjet(this.$route.params.id, nomProjet, descriptionProjet, dateDebut, dateFin, montantTotalProjet, statut)
+      ProjetsService.editProjet(this.$route.params.id, nomProjet, descriptionProjet, dateDebut, dateFin, montantTotalProjet, statut)  
     }
   }
   
