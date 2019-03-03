@@ -1,19 +1,19 @@
 <template lang="html">
     <div class="container">
         <div class="text-center">
-            <Title title="créer un produit"/>            
+            <Title title="Créer un projet"/>            
         </div>
-        <CreateProductForm/>
+        <CreateProjetForm/>
     </div>
 </template>
 
 <script>
-import CreateProductForm from '@/components/CreateProductForm.vue'
+import CreateProjetForm from '@/components/CreateProjetForm.vue'
 import Title from '@/utils/Title.vue'
 
 export default {
   components: {
-    CreateProductForm,
+    CreateProjetForm,
     Title
   }
 }

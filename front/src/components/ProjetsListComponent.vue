@@ -13,10 +13,12 @@
                 <td>{{projet.statut}}</td> 
                
                <router-link :to="`/projet-detail/${projet._id}`">detail</router-link> |
-               <router-link :to="`/projet-modifier/${projet._id}`">modifier</router-link>
+               <router-link :to="`/projet-modifier/${projet._id}`">modifier</router-link> |
+               <router-link :to="`/projet-supprimer/${projet._id}`">supprimer</router-link>
                
             </tr>
         </table>
+        <router-link to="/create" tag="button"  class="btn btn-primary">Créer un projet</router-link>
     </div>
 </template>
 

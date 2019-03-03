@@ -6,6 +6,7 @@ import ProjetDetail from './views/ProjetDetail.vue'
 import About from './views/About.vue'
 import ProjetsListing from './views/ProjetsListing.vue'
 import ProjetModifier from './views/ProjetModifier.vue'
+import ProjetSupprimer from './views/ProjetSupprimer.vue'
 
 Vue.use(Router)
 
@@ -42,6 +43,11 @@ export default new Router({
       path: '/projet-modifier/:id',
       name: 'ProjetModifier',
       component: ProjetModifier
+    },
+    {
+      path: '/projet-supprimer/:id',
+      name: 'ProjetSupprimer',
+      component: ProjetSupprimer
     }
   ]
 })

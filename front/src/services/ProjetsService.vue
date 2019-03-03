@@ -32,7 +32,13 @@ export default {
       })
   },
   deleteProjet (id) {
-
+    return fetch(myApiUrl + id, {
+    method: 'delete',
+    })
+      .then((response) => {
+        console.log(response)
+        return response.json()
+      })
   },
   editProjet (id, nomProjet, descriptionProjet, dateDebut, dateFin, montantTotalProjet, statut) {
     return fetch(myApiUrl + id, {

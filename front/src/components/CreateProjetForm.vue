@@ -1,6 +1,6 @@
 <template lang="html">
-
-   <form @submit.prevent="validateBeforeSubmit" novalidate >
+  <div class="create-projet">
+       <form @submit.prevent="validateBeforeSubmit" novalidate >
       <div :class="{'form-group': true, 'has-error': errors.has('nomProjet') }">
               <label>Nom du projet</label>
               <input type="text" v-validate="'required'"  :class="{ 'input form-control': true }" v-model="nomProjet" name="nomProjet"/>
@@ -32,30 +32,37 @@
 
           <div :class="{'form-group': true, 'has-error': errors.has('statut') }">
               <label>Statut</label>
-              <input type="text" v-validate="'required'" :class="{'input form-control': true }" v-model="statut" name="statut"/>
+              <select v-model="statut" v-validate="'required'" :class="{'input form-control': true }" name="statut">
+                  <option disabled value="">Choisissez</option>
+                  <option>annulé</option>
+                  <option>terminé</option>
+                  <option>en cours de réalisation</option>
+                  <option>prospect</option>
+              </select>
               <p class="text-danger" v-if="errors.has('statut')">{{ errors.first('statut') }}</p>
               </div>
+      
         
-          <button :disabled="errors.any()" class="btn btn-primary" v-on:click="formData(nomProjet, descriptionProjet, dateDebut, dateFin, montantTotalProjet, statut)">Modifier</button>
+          <button :disabled="errors.any()" class="btn btn-primary" v-on:click="formData(nomProjet, descriptionProjet, dateDebut, dateFin, montantTotalProjet, statut)">Créer</button>
          
       </form>
-
+  </div>
 </template>
 
 <script>
-import ProjetsService from '../services/ProjetsService.vue';
 
+import ProjetsService from '../services/ProjetsService.vue'
 
 export default {
   data () {
     return {
-      projet: [],
       nomProjet: '',
       descriptionProjet: '',
       dateDebut: '',
       dateFin: '',
       montantTotalProjet: '',
-      statut: ''
+      statut: '',
+      isVisible: false
     }
   },
   computed: {
@@ -63,21 +70,17 @@ export default {
       return this.nomProjet && this.descriptionProjet && this.dateDebut && this.dateFin && this.montantTotalProjet && this.statut;
     }
   },
-  created () {
-    let paramsId = this.$route.params.id
-    ProjetsService.getProjet(paramsId)
-  },
   methods: {
     validateBeforeSubmit() {
       this.$validator.validateAll().then((result) => {
         if (result) {
-          alert('Modifié avec succès!');
+          alert('Créer avec succès!');
           return;
         }
       });
     },
     formData: function (nomProjet, descriptionProjet, dateDebut, dateFin, montantTotalProjet, statut) {
-      ProjetsService.editProjet(this.$route.params.id, nomProjet, descriptionProjet, dateDebut, dateFin, montantTotalProjet, statut)
+      ProjetsService.createProjet(nomProjet, descriptionProjet, dateDebut, dateFin, montantTotalProjet, statut)
     }
   }
   
