@@ -13,13 +13,13 @@
                     <router-link to="/">Home</router-link>
                 </li>
                 <li class="nav-item px-2">
-                    <router-link to="/about">About</router-link>
-                </li>
-                <li class="nav-item px-2">
                     <router-link to="/projets-listing">Liste des projets</router-link>
                 </li>
                 <li class="nav-item px-2">
                     <router-link to="/clients-listing">Liste des clients</router-link>
+                </li>
+                <li class="nav-item px-2">
+                    <router-link to="/salaries-listing">Liste des salariés</router-link>
                 </li>
             </ul>
         </nav>

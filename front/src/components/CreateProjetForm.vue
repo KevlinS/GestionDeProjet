@@ -74,7 +74,7 @@ export default {
     validateBeforeSubmit() {
       this.$validator.validateAll().then((result) => {
         if (result) {
-          alert('Créer avec succès!');
+          alert('Créé avec succès!');
           return;
         }
       });

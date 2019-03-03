@@ -34,7 +34,13 @@ export default {
       })
   },
   deleteSalarie (id) {
-
+    return fetch(myApiUrl + id, {
+    method: 'delete',
+    })
+      .then((response) => {
+        console.log(response)
+        return response.json()
+      })
   },
   editSalarie (id, nomSalarie, prenomSalarie, usernameSalarie, dateDeNaissance, adresseSalarie, telephoneSalarie, mailSalarie, posteSalarie) {
     return fetch(myApiUrl + id, {
@@ -45,12 +51,14 @@ export default {
       },
       body: JSON.stringify(
         {
-          'nomProjet': nomProjet,
-          'descriptionProjet': descriptionProjet,
-          'dateDebut': dateDebut,
-          'dateFin': dateFin,
-          'montantTotalProjet': montantTotalProjet,
-          'statut': statut
+          'nomSalarie': nomSalarie,
+          'prenomSalarie': prenomSalarie,
+          'usernameSalarie': usernameSalarie,
+          'dateDeNaissance': dateDeNaissance,
+          'adresseSalarie': adresseSalarie,
+          'telephoneSalarie': telephoneSalarie,
+          'mailSalarie': mailSalarie,
+          'posteSalarie': posteSalarie
         }
       )
     })

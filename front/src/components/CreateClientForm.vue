@@ -42,7 +42,7 @@
               <p class="text-danger" v-if="errors.has('secteurActivite')">{{ errors.first('secteurActivite') }}</p>
               </div>
         
-          <button :disabled="errors.any()" class="btn btn-primary" v-on:click="formData(nomEntreprise, nomClient, prenomClient, adresseClient, telephoneClient, mailClient, secteurActivite)">Modifier</button>
+          <button :disabled="errors.any()" class="btn btn-primary" v-on:click="formData(nomEntreprise, nomClient, prenomClient, adresseClient, telephoneClient, mailClient, secteurActivite)">Créer</button>
          
       </form>
 
@@ -73,7 +73,7 @@ export default {
     validateBeforeSubmit() {
       this.$validator.validateAll().then((result) => {
         if (result) {
-          alert('Crée avec succès!');
+          alert('Créé avec succès!');
           return;
         }
       });
