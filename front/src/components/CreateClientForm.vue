@@ -73,7 +73,7 @@ export default {
     validateBeforeSubmit() {
       this.$validator.validateAll().then((result) => {
         if (result) {
-          alert('Modifié avec succès!');
+          alert('Crée avec succès!');
           return;
         }
       });
