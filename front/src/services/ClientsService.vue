@@ -1,14 +1,14 @@
 <script>
-const myApiUrl = 'http://localhost:3000/api/v1/projet/'
+const myApiUrl = 'http://localhost:3000/api/v1/client/'
 
 export default {
-  getProjets () {
+  getClients () {
     return fetch(myApiUrl)
       .then((response) => {
         return response.json()
       })
   },
-  createProjet (nomProjet, descriptionProjet, dateDebut, dateFin, montantTotalProjet, statut) {
+  createClient (nomEntreprise, nomClient, prenomClient, adresseClient, telephoneClient, mailClient, secteurActivite) {
     return fetch(myApiUrl, {
       method: 'post',
       headers: {
@@ -17,12 +17,13 @@ export default {
       },
       body: JSON.stringify(
         {
-          'nomProjet': nomProjet,
-          'descriptionProjet': descriptionProjet,
-          'dateDebut': dateDebut,
-          'dateFin': dateFin,
-          'montantTotalProjet': montantTotalProjet,
-          'statut': statut
+          'nomEntreprise': nomEntreprise,
+          'nomClient': nomClient,
+          'prenomClient': prenomClient,
+          'adresseClient': adresseClient,
+          'telephoneClient': telephoneClient,
+          'mailClient': mailClient,
+          'secteurActivite': secteurActivite
         }
       )
     })
@@ -31,10 +32,10 @@ export default {
         return response.json()
       })
   },
-  deleteProjet (id) {
+  deleteClient (id) {
 
   },
-  editProjet (id, nomProjet, descriptionProjet, dateDebut, dateFin, montantTotalProjet, statut) {
+  editClient (id, nomEntreprise, nomClient, prenomClient, adresseClient, telephoneClient, mailClient, secteurActivite) {
     return fetch(myApiUrl + id, {
       method: 'put',
       headers: {
@@ -43,12 +44,13 @@ export default {
       },
       body: JSON.stringify(
         {
-          'nomProjet': nomProjet,
-          'descriptionProjet': descriptionProjet,
-          'dateDebut': dateDebut,
-          'dateFin': dateFin,
-          'montantTotalProjet': montantTotalProjet,
-          'statut': statut
+          'nomEntreprise': nomEntreprise,
+          'nomClient': nomClient,
+          'prenomClient': prenomClient,
+          'adresseClient': adresseClient,
+          'telephoneClient': telephoneClient,
+          'mailClient': mailClient,
+          'secteurActivite': secteurActivite
         }
       )
     })
@@ -57,7 +59,7 @@ export default {
         return response.json()
       })
   },
-  getProjet (id) {
+  getClient (id) {
     console.log(myApiUrl + id)
     return fetch(myApiUrl + id)
       .then((response) => {

@@ -33,7 +33,7 @@ exports.getProjet = function(req, res) {
 }
 
 exports.updateProjet = function(req, res) {
-	Projet.findByIdAndUpdate(req.params.id, req.body, function(err, product){
+	Projet.findByIdAndUpdate(req.params.id, req.body, function(err, projet){
 		if(err){
 			console.log(err);
 		}

@@ -28,8 +28,6 @@ mongoose.connect('mongodb://kevlin:kevlin123@ds357955.mlab.com:57955/gestiondepr
 	}
 });
 
-
-
 app.get('/', (req, res) => {
 	res.send('Evaluation Nodejs!');
 });
@@ -39,7 +37,7 @@ app.post('/api/v1/projet', projetController.createProjet);
 app.get('/api/v1/projet', projetController.getProjet);
 app.put('/api/v1/projet/:id', projetController.updateProjet);
 app.delete('/api/v1/projet/:id', projetController.deleteProjet);
-app.get('/api/v1/product/:id', projetController.detailProjet);
+app.get('/api/v1/projet/:id', projetController.detailProjet);
 
 // HTTP des salariés
 app.post('/api/v1/salarie', salarieController.createSalarie);

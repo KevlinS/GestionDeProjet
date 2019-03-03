@@ -2,9 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import CreateProduct from './views/CreateProduct.vue'
-import ProductDetail from './views/ProductDetail.vue'
+import ProjetDetail from './views/ProjetDetail.vue'
 import About from './views/About.vue'
 import ProjetsListing from './views/ProjetsListing.vue'
+import ProjetModifier from './views/ProjetModifier.vue'
 
 Vue.use(Router)
 
@@ -33,9 +34,14 @@ export default new Router({
       component: ProjetsListing
     },
     {
-      path: '/product-detail/:id',
-      name: 'ProductDetail',
-      component: ProductDetail
+      path: '/projet-detail/:id',
+      name: 'ProjetDetail',
+      component: ProjetDetail
+    },
+    {
+      path: '/projet-modifier/:id',
+      name: 'ProjetModifier',
+      component: ProjetModifier
     }
   ]
 })

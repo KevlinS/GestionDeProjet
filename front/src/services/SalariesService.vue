@@ -1,14 +1,14 @@
 <script>
-const myApiUrl = 'http://localhost:3000/api/v1/projet/'
+const myApiUrl = 'http://localhost:3000/api/v1/salarie/'
 
 export default {
-  getProjets () {
+  getSalaries () {
     return fetch(myApiUrl)
       .then((response) => {
         return response.json()
       })
   },
-  createProjet (nomProjet, descriptionProjet, dateDebut, dateFin, montantTotalProjet, statut) {
+  createSalarie (nomSalarie, prenomSalarie, usernameSalarie, dateDeNaissance, adresseSalarie, telephoneSalarie, mailSalarie, posteSalarie) {
     return fetch(myApiUrl, {
       method: 'post',
       headers: {
@@ -17,12 +17,14 @@ export default {
       },
       body: JSON.stringify(
         {
-          'nomProjet': nomProjet,
-          'descriptionProjet': descriptionProjet,
-          'dateDebut': dateDebut,
-          'dateFin': dateFin,
-          'montantTotalProjet': montantTotalProjet,
-          'statut': statut
+          'nomSalarie': nomSalarie,
+          'prenomSalarie': prenomSalarie,
+          'usernameSalarie': usernameSalarie,
+          'dateDeNaissance': dateDeNaissance,
+          'adresseSalarie': adresseSalarie,
+          'telephoneSalarie': telephoneSalarie,
+          'mailSalarie': mailSalarie,
+          'posteSalarie': posteSalarie
         }
       )
     })
@@ -31,10 +33,10 @@ export default {
         return response.json()
       })
   },
-  deleteProjet (id) {
+  deleteSalarie (id) {
 
   },
-  editProjet (id, nomProjet, descriptionProjet, dateDebut, dateFin, montantTotalProjet, statut) {
+  editSalarie (id, nomSalarie, prenomSalarie, usernameSalarie, dateDeNaissance, adresseSalarie, telephoneSalarie, mailSalarie, posteSalarie) {
     return fetch(myApiUrl + id, {
       method: 'put',
       headers: {
@@ -57,7 +59,7 @@ export default {
         return response.json()
       })
   },
-  getProjet (id) {
+  getSalarie (id) {
     console.log(myApiUrl + id)
     return fetch(myApiUrl + id)
       .then((response) => {
