@@ -13,6 +13,8 @@ import Footer from '@/layout/Footer.vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+
+
 export default {
   components: {
     Header,
