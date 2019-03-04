@@ -3,7 +3,7 @@
 
         <!-- logo wrapper -->
         <div class="logo-wrapper text-center">
-            <img alt="Vue logo" src="../assets/logo.png">
+            <img alt="Vue logo" src="../assets/devices.jpg">
         </div>
 
         <!-- nav -->
@@ -35,7 +35,7 @@ export default {
 <style lang="css">
 
 .logo-wrapper img{
-    max-width: 100px;
+    max-width: 500px;
     padding: 40px 0;
 }
 
