@@ -1,6 +1,6 @@
 <template lang="html">
     <div class="projet-listing container">
-        <Title title="Listing projets"/>
+        <Title title="LISTES DES PROJETS"/>
         <ProjetsListComponent/>
     </div>
 </template>

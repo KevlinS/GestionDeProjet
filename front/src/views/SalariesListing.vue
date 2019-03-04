@@ -1,6 +1,6 @@
 <template lang="html">
     <div class="salarie-listing container">
-        <Title title="Listing salaries"/>
+        <Title title="LISTE DES SALARIÉS"/>
         <SalariesListComponent/>
     </div>
 </template>

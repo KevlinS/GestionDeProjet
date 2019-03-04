@@ -26,7 +26,7 @@
             </div>
 
             <div :class="{'form-group': true, 'has-error': errors.has('adresseSalarie') }">
-              <label>Adresse salarié</label>
+              <label>Adresse salarié (rue, ville, code postal)</label>
               <input type="text" v-validate="'required'" :class="{'input form-control': true }" v-model="adresseSalarie" name="adresseSalarie"/>
               <p class="text-danger" v-if="errors.has('adresseSalarie')">{{ errors.first('adresseSalarie') }}</p>
             </div>
@@ -55,7 +55,7 @@
               <p class="text-danger" v-if="errors.has('posteSalarie')">{{ errors.first('posteSalarie') }}</p>
             </div>
         
-          <button :disabled="errors.any()" class="btn btn-primary" v-on:click="formData(nomSalarie, prenomSalarie, usernameSalarie, dateDeNaissance, adresseSalarie, telephoneSalarie, mailSalarie, posteSalarie)">Modifier</button>
+            <button :disabled="errors.any()" class="btn btn-primary" v-on:click="formData(nomSalarie, prenomSalarie, usernameSalarie, dateDeNaissance, adresseSalarie, telephoneSalarie, mailSalarie, posteSalarie)">Modifier</button>
          
       </form>
 
@@ -98,7 +98,12 @@ export default {
       });
     },
     formData: function (nomSalarie, prenomSalarie, usernameSalarie, dateDeNaissance, adresseSalarie, telephoneSalarie, mailSalarie, posteSalarie) {
-      SalariesService.editSalarie(this.$route.params.id, nomSalarie, prenomSalarie, usernameSalarie, dateDeNaissance, adresseSalarie, telephoneSalarie, mailSalarie, posteSalarie)  
+      this.$validator.validateAll().then((result) => {
+        if (result) {
+          SalariesService.editSalarie(this.$route.params.id, nomSalarie, prenomSalarie, usernameSalarie, dateDeNaissance, adresseSalarie, telephoneSalarie, mailSalarie, posteSalarie)  
+          return;
+        }
+      });
     }
   }
   
